@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import Demo from './demo'
+import Test from "./Test";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default class App extends Component
+{
+  constructor()
+  {
+    super()
+    this.state = {
+      title : "code better"
+    }
+  }
+  render()
+  {
+    return<div>
+      <h1>App Component : {this.state.title}</h1>
+      <Demo cname={this.state.title}/>
+      <Test/>
     </div>
-  );
+  }
 }
 
-export default App;
+
+// pros : property =>child component ko parent ne data diya ho use props hote h (props are read only)
